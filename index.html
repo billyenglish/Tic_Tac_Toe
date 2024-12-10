@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+        }
+
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: inherit;
+        }
+
+        .gameboard {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            border: 1px solid #000;
+            height: 30rem;
+            width: 30rem;
+        }
+
+        .game-squares {
+            border: 1px solid #000;
+            height: 10rem;
+            width: 10rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+    </header>
+    <main>
+        <section>
+            <div class="gameboard">
+                <div class="game-squares">1</div>
+                <div class="game-squares">2</div>
+                <div class="game-squares">3</div>
+                <div class="game-squares">4</div>
+                <div class="game-squares">5</div>
+                <div class="game-squares">6</div>
+                <div class="game-squares">7</div>
+                <div class="game-squares">8</div>
+                <div class="game-squares">9</div>
+            </div>
+        </section>
+    </main>
+    <footer>
+    </footer>
+    <script type="module" src="./script.js"></script>
+</body>
+</html>
