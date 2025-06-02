@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Body Section */
+
+body {
+    font-size: 62.5%;
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
+    height: 100vh;
+    width: 100%;
+}
+
+/* Header Section */
+
+header {
+    display: flex;
+}
+
+/* Main Section */
+
+main {
+    display: grid;
+    justify-content: center;
+}
+
+section {
+    margin-top: 5rem;
+}
+
+.game-board {
+    height: 30rem;
+    width: 35rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.game-squares {
+    border: 1px solid #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 6rem;
+    font-weight: 300;
+}
+
+.square-one, .square-two, .square-three {
+    border-top: none;
+}
+
+.square-one, .square-four, .square-seven {
+    border-left: none;
+}
+
+.square-three, .square-six, .square-nine {
+    border-right: none;
+}
+
+.square-seven, .square-eight, .square-nine {
+    border-bottom: none;
+}
