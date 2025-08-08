@@ -20,11 +20,11 @@ const gameBoardController = (function () {
 
     const selectPlayers = (players) => {
         const selectPlayers = players == 'Player1' ? 'Player2' : 'Computer';;
-        const players = {
+        const getPlayers = {
             player1: 'Player1',
             player2: selectPlayers
         }
-        return players;
+        return getPlayers;
     }
 
     const selectSymbols = (playerSymbol) => {        
@@ -45,12 +45,40 @@ const gameBoardController = (function () {
         return { position1, position2 };
     }
 
+    const validdateWinner = () => {
+        const winningCombinations = [
+            // Rows
+            [[0, 0], [0, 1], [0, 2]],
+            [[1, 0], [1, 1], [1, 2]],
+            [[2, 0], [2, 1], [2, 2]],
+            // Columns
+            [[0, 0], [1, 0], [2, 0]],
+            [[0, 1], [1, 1], [2, 1]],
+            [[0, 2], [1, 2], [2, 2]],
+            // Diagonals
+            [[0, 0], [1, 1], [2, 2]],
+            [[0, 2], [1, 1], [2, 0]]
+        ];
+
+        for (const combination of winningCombinations) {
+            const [firstSquare, secondSquare, thirdSquare] = combination;
+            if (createGameBoard.createBoard[firstSquare[0]][firstSquare[1]] &&
+                createGameBoard.createBoard[firstSquare[0]][firstSquare[1]] === createGameBoard.createBoard[secondSquare[0]][secondSquare[1]] &&
+                createGameBoard.createBoard[firstSquare[0]][firstSquare[1]] === createGameBoard.createBoard[thirdSquare[0]][thirdSquare[1]]) {
+                return createGameBoard.createBoard[firstSquare[0]][firstSquare[1]];
+            }
+        }
+        return null;
+    }
+
     const currentPlayer = () => {
         return player === 'Player1' ? 'Player2' : 'Player1';
     }
 
     const playGame = () => {        
         let currentPlayer = 'Player1';
+        
+
     }
 
     const resetGameBoard = () => {
@@ -67,6 +95,7 @@ const gameBoardController = (function () {
         selectPlayers,
         selectSymbols,
         computerSelection,
+        validdateWinner,
         resetGameBoard
     }
 
